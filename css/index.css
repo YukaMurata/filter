@@ -1,0 +1,43 @@
+body{
+	background: #eeeeee;
+}
+
+.content{
+	width: 940px;
+	margin: 30px auto;
+}
+
+.content #content_list{
+
+}
+
+.content #content_list ul{
+	padding: 0;
+}
+
+.content #content_list li{
+	list-style: none;
+}
+
+.content #content_list .content_list_item{
+	display: block;
+	float: left;
+	width: 300px;
+	height: 300px;
+	background: #4ab265;
+	margin-bottom: 13px;
+	margin-right: 13px;
+}
+
+
+
+.content #content_list .content_list_item(3n){
+	margin-right: 0;
+}
+
+
+.content #content_list :after{
+	content: "";
+	clear: both;
+	display: table;
+}

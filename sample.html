@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang = "ja">
+<head>
+<meta charset = "utf-8">
+<title></title>
+<meta name = "keywords" content ="">
+<meta name = "description" content="">
+<link rel="stylesheet" type="text/css" media="screen,print" href="css/style.css">
+<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+<script src="js/main.js"></script>
+<!-- JS設定ここから -->
+
+<!-- JS設定ここまで -->
+</head>
+
+<body>
+
+<div class="content"> 
+    
+
+<h1>クリックで要素の絞り込み</h1>
+<p>
+機能：<br>
+チェックボックスを複数選択するとAND条件として絞り込みます。<br>
+「絞り込まない」を選択すると未選択の状態に戻ります。<br>
+このサンプルHTMLでは、div要素を絞り込んで表示しています。（tr要素などに変更可）
+</p>
+
+<!-- 絞込み要素選択ここから -->
+<div id="select">
+    
+    <!-- 絞り込まない（全表示）ボタン -->
+    <label class="selected"><input type="radio" id="all" checked="checked">絞り込まない</label>
+
+    <!-- 絞込みに使うタグをidとして指定します -->
+    <label><input type="checkbox" id="young" class="sort">young</label>
+    <label><input type="checkbox" id="murata" class="sort">murata</label>
+    <label><input type="checkbox" id="old" class="sort">old</label>
+
+</div>
+<!-- 絞込み要素選択ここまで -->
+
+
+<!-- 絞込まれる要素ここから -->
+<div id="result">
+    
+    <!-- 絞込みに使うタグをclassとして指定します -->
+
+    <div class="item young">
+        <p>ヘビ　class="young"</p>
+    </div>
+
+    <div class="item murata">
+        <p>椅子　class="murata"</p>
+    </div>
+
+    <div class="item old">
+        <p>炭　class="old"</p>
+    </div>
+
+    <div class="item young murata">
+        <p>りす　class="young bird"</p>
+    </div>
+
+    <div class="item young old">
+        <p>ウニ　class="young old"</p>
+    </div>
+
+    <div class="item murata old">
+        <p>ピアノ　class="murata old"</p>
+    </div>
+
+    <div class="item young murata old">
+        <p>ヌー　class="young murata old"</p>
+    </div>
+
+    <div class="item white">
+        <p>紙　class="white"</p>
+    </div>
+
+</div>
+</div>
+<!-- 絞込まれる要素ここまで -->
+</body>
+</html>

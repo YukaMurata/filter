@@ -1,0 +1,28 @@
+/* ---------- 必須CSS ここから ------------ */
+
+
+.content{
+	width: 940px;
+	margin:30px auto;
+}
+
+#result [class*="hidden-"] {display: none;}
+
+/* ---------- 必須CSS ここまで ------------ */
+
+
+/* ここから下は見た目の調整 */
+#select {margin-bottom: 1em;}
+
+#select label.selected {background-color: #fcc;} /* 選択中のラベルのスタイルを変更 */
+
+#result .item{
+	width: 455px;
+	float: left;
+	background: #ffff00;
+	margin-bottom:30px;
+}
+
+#result .item:nth-child(2n){
+	margin-left: 30px;
+}
