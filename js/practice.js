@@ -1,41 +1,17 @@
 $(function(){
 
 	var $contentListItem = $("#content_list li");
-
-
 	var showingClass = []; 
 
 	$('input[name=num]').on('change',function() {
+		if($(this).is(':checked')){
 		var val = $(this).val();
 		updateShowingClass(val);
+		}else{
+		var del = $(this).val();
+		deletShowingClass(del);
+		}
 		showList();
-
-
-	//$(".content_list_item").velocity("fadeOut",{duration:150});
-		// $(this).each(function(){
-			
-
-		// 	if($(this).prop("checked")){
-		// //	var n = $("#check_btn :checkbox:checked").length;
-		// 		$("#content_list li").velocity("fadeOut",{
-		// 			duration:350,
-		// 			complete:function(){
-		// 				$("#content_list .content_list_item." + val ).velocity("fadeIn",{
-		// 					duration:350
-		// 				});
-		// 			}
-		// 		});
-		// 		console.log(val);
-
-				
-		// 	} else{
-		// 		$contentListItem.velocity("fadeIn",
-		// 			{duration:350
-		// 		});
-		// 	}
-
-		// });
-
 	 });
 
 	function updateShowingClass (val){
@@ -45,28 +21,40 @@ $(function(){
 
 	function showList (){
 		var $list = $("." + showingClass.join("."));
-
-		$("#content_list li").velocity("fadeOut",{
+		$contentListItem.velocity("fadeOut",{
 		 			duration:350,
 		 			complete:function(){
+		 				if($list.length !=0){
 		 				$list.velocity("fadeIn",{
 		 					duration:350
 		 				});
+		 				}else{
+		 				alert("0件です!!!!!!!");
 		 			}
-		 		});
+		 		}
+		 	});
 	}
 
-	$('input[name=reset]').on('click',function() {
-		resetShowingClass();
-		$('input[name=num]').prop('checked',false);
+	function deletShowingClass (del){
+	for(i = 0; i < showingClass.length; i++){
+ 		if(showingClass[i] == del){
+ 			 showingClass.splice(i,1);
+ 			}
+		}
+		console.log(showingClass);
+	}
+
+	$('.reset').on('click',function() {
+		reset();
 	});
 
-	function resetShowingClass(){
+	function reset(){
 		showingClass = [];
-		$("#content_list li").velocity("fadeIn",{
+		$contentListItem.velocity("fadeIn",{
 		 					duration:350
 		 				});
-		 			}
+		$('input[name=num]').prop('checked',false);
+	}
 
 
 });
